@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+		
+		<template id="diamondwebpay_acquirer_button">
+            <form t-if="acquirer.diamondwebpay_merchant_id" t-att-action="tx_url" method="post" target="_self">
+                <input type="hidden" name="mercId" t-att-value="tx_values['diam_merchant_id']"/>
+                <input type="hidden" name="currCode" t-att-value="tx_values['diam_crr_code'] or '566'"/>
+                <input type="hidden" name="amt" t-att-value="tx_values['diam_amount'] or '0.0'"/>
+                <input type="hidden" name="orderId" t-att-value="tx_values['diam_order_id']"/>
+                <input type="hidden" name="submit" t-att-value="tx_values['diam_submit']"/>
+                <input type="hidden" name="email" t-att-value="tx_values['diam_customer_email']"/>
+                <input type="hidden" name="prod" t-att-value="tx_values['diam_product_name']"/>
+                <!-- URLs -->
+                <input t-if="tx_values.get('diam_return')" type='hidden' name='diam_return'
+                    t-att-value="tx_values.get('diam_return')"/>
+                <input t-if="tx_values.get('diam_returncancel')" type='hidden' name='diam_returncancel'
+                    t-att-value="tx_values.get('diam_returncancel')"/>
+                <input t-if="tx_values.get('diam_returnerror')" type='hidden' name='diam_returnerror'
+                    t-att-value="tx_values.get('diam_returnerror')"/>
+                <input t-if="tx_values.get('diam_returnreject')" type='hidden' name='diam_returnreject'
+                    t-att-value="tx_values.get('diam_returnreject')"/>
+                    
+                <!-- custom -->
+                <input t-if="tx_values.get('merchantReturnData')" type='hidden' name='merchantReturnData'
+                    t-att-value="tx_values.get('merchantReturnData')"/>
+                    
+                <!-- submit -->
+                <button type="submit" width="100px"
+                    t-att-class="submit_class">
+                    <img t-if="not submit_txt" src="/payment_diamondwebpay/static/src/img/diamondwebpay_icon.png"/>
+                    <span t-if="submit_txt"><t t-esc="submit_txt"/> <span class="fa fa-long-arrow-right"/></span>
+                </button>
+            </form>
+        </template>
+		
+    </data>
+</openerp>
