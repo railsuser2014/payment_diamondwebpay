@@ -20,8 +20,8 @@
 ##############################################################################
 
 {'name': 'Diamondwebpay Payment Acquirer',
- 'version': '1.0',
- 'category': 'Hidden',
+ 'version': '1.1',
+ 'category': 'Website',
  'depends': ['payment','base','sale'],
  'author': 'Tech Receptives',
  'license': 'AGPL-3',
