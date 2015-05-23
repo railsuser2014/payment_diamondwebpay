@@ -27,8 +27,8 @@
  'license': 'AGPL-3',
  'website': 'https://www.techreceptives.com',
  'description': """
- Diamondwebpay Payment Acquirer
- ==============================
+  Diamondwebpay Payment Acquirer
+ ===============================================
  Payment Acquirer: Diamondwebpay Implementation
  """,
  'data': [
