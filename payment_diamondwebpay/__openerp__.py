@@ -19,21 +19,28 @@
 #
 ##############################################################################
 
-{
-    'name': 'Diamondwebpay Payment Acquirer',
-    'category': 'Hidden',
-    'summary': 'Payment Acquirer: Diamondwebpay Implementation',
-    'version': '1.0',
-    'description': """Diamondwebpay Payment Acquirer""",
-    'author': 'Tech Receptives',
-    'depends': ['payment','base','sale'],
-    'data': [
+{'name': 'Diamondwebpay Payment Acquirer',
+ 'version': '1.0',
+ 'category': 'Hidden',
+ 'depends': ['payment','base','sale'],
+ 'author': 'Tech Receptives',
+ 'license': 'AGPL-3',
+ 'website': 'https://www.techreceptives.com',
+ 'description': """
+ Diamondwebpay Payment Acquirer
+ ==============================
+ Payment Acquirer: Diamondwebpay Implementation
+ """,
+ 'data': [
         'views/diamondwebpay.xml',
         'views/payment_acquirer.xml',
         'data/diamondwebpay.xml',
     ],
-    'installable': True,
-    'application': True,
+ 'installable': True,
+ 'application': True,
+ 'auto_install': False,
+ 'price': 0.00,
+ 'currency': 'EUR',
 }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
